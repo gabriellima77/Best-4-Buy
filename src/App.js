@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyledApp } from './components/styles/App.style';
 import { Global } from './components/styles/Globas.style';
@@ -16,6 +16,10 @@ import {
 } from 'react-router-dom';
 
 function App() {
+
+  useEffect(()=> {
+
+  }, []);
   return (
     <StyledApp> 
       <GlobalFonts />

@@ -1,14 +1,16 @@
 import React from 'react';
-import Button from './Button'; 
+import { StyledHome, StyledContent } from './styles/Home.style';
+import Button from './Button';
 
-const Home = ()=> {
+const Home = ({ prod })=> {
   return(
-    <main>
-      <h1>Home Page</h1>
-      <Button>
-        Buy Now
-      </Button>
-    </main>
+    <StyledHome>
+      <StyledContent>
+        <h1>This is the new {(prod)? prod: 'Item'}</h1>
+        <p>It will take your entertainment to another level</p>
+        <Button>Buy Now</Button>
+      </StyledContent>
+    </StyledHome>
   );
 }
 
