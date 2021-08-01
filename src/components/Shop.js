@@ -1,10 +1,26 @@
 import React from 'react';
+import { StyledShop, Categories } from './styles/Shop.style';
 
 const Shop = ()=> {
   return(
-    <section>
-      <h2>Shop Section</h2>
-    </section>
+    <StyledShop>
+      <Categories>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+        <p>Oi</p>
+      </Categories>
+    </StyledShop>
   )
 }
 

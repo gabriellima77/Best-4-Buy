@@ -4,7 +4,7 @@ export const StyledHome = styled.section`
   position: relative;
   width: 100%;
   height: calc(100vh - 50px);
-  background: #FBFBFB;
+  background: #EFEFEF;
 `;
 
 export const StyledContent = styled.div`
