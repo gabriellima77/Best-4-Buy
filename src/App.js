@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import { StyledApp } from './components/styles/App.style';
+import { Global } from './components/styles/Globas.style';
+import { GlobalFonts } from './assets/fonts/GlobalFonts.style';
+import Header from './components/Header';
+import Home from './components/Home';
+import Shop from './components/Shop';
+import Search from './components/Search';
+import Cart from './components/Cart';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp> 
+      <GlobalFonts />
+      <Global />
+
+      <Router >
+        <Header />
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/shop" component={Shop} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/cart" component={Cart} />
+        </Switch>
+      </Router>
+    </StyledApp>
   );
 }
 
