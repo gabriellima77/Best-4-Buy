@@ -1,7 +1,11 @@
 import React, { useState, useEffect} from 'react';
+import { useRouteMatch, useParams } from 'react-router-dom';
 import uniqid from 'uniqid';
+
 import { StyledShop, Categories } from './styles/Shop.style';
 import { ItemsBox, Item, Rating } from './styles/Items.style';
+import { StyledLink } from './styles/Header.style';
+
 import { BsStar, BsStarHalf, BsStarFill} from 'react-icons/bs';
 import {
   GiBigDiamondRing,
@@ -9,23 +13,24 @@ import {
   GiSmartphone,
 } from 'react-icons/gi';
   
-const Shop = ({match})=> {
+const Shop = ()=> {
   const [data, setData] = useState([]);
+  const { id } = useParams();
 
   useEffect(()=> {
     fetchData();
-  }, []);
+  }, [ id ]);
 
   const fetchData = async (category)=> {
-    const response = (category)
-      ? await fetch(`https://fakestoreapi.com/products/category/${category}`)
+    console.log(id);
+    const response = (id)
+      ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
     const json = await response.json();
-    console.log(json);
     setData(json);
   }
 
-  const getRandomRate = ()=> (Math.floor(Math.random() * 500) / 100);
+  const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
   const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
 
   return(
@@ -39,10 +44,10 @@ const Shop = ({match})=> {
                 <img alt={prod.title} src={prod.image} />
                 <p>{prod.title}</p>
                 <RatingBox
-                  rating={getPeopleRated()}
-                  n={getRandomRate(10000)}
+                  rating={getPeopleRated(10000)}
+                  n={getRandomRate()}
                 />
-                <p>$ {prod.price}</p>
+                <p>${prod.price}</p>
               </Item>
             ))
             : null
@@ -67,18 +72,31 @@ const RatingBox = ({rating, n})=> {
   return(
     <Rating>
       {getStars()}
-      <p>{rating? rating: 200}</p>
+      <p>{rating}</p>
     </Rating>
   );
 }
 
-const getCategories = ()=> (
-  <Categories>
-    <GiBigDiamondRing title="jewelery" />
-    <GiTShirt title="men's clothing" />
-    <GiAmpleDress title="women's clothing" />
-    <GiSmartphone title="electronics" />
-  </Categories>
-);
+const getCategories = ()=> {
+  let { url } = useRouteMatch();
+  url = (url !== '/shop')? '/shop': url;
+
+  return (
+    <Categories>
+      <StyledLink color="black" to={`${url}/jewelery`}>
+        <GiBigDiamondRing title="jewelery" />
+      </StyledLink>
+      <StyledLink color="black" to={`${url}/men's clothing`}>
+        <GiTShirt title="men's clothing" />
+      </StyledLink>
+      <StyledLink color="black" to={`${url}/women's clothing`}>
+        <GiAmpleDress title="women's clothing" />
+      </StyledLink>
+      <StyledLink color="black" to={`${url}/electronics`}>
+        <GiSmartphone title="electronics" />
+      </StyledLink>
+    </Categories>
+  );
+}
 
 export default Shop;

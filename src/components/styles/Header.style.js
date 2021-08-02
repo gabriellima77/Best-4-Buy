@@ -28,7 +28,7 @@ export const Nav = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
-  color: #EAEAEA;
+  color: ${(props)=>(props.color)? props.color: '#EAEAEA'};
   font-size: 20px;
   text-decoration: none;
   margin-left: ${(props)=> props.margin};
