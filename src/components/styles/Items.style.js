@@ -5,18 +5,26 @@ export const ItemsBox = styled.div`
   padding: 20px 7%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 40px;
 `;
 
 export const Item = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   background: white;
 
   img {
+    align-self: center;
+    width: 90%;
     height: 250px;
-    background: #555;
+    padding: 20px 0;
+    transition: transform ease .5s;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
   }
 
   p {
@@ -27,6 +35,7 @@ export const Item = styled.div`
 `;
 
 export const Rating = styled.div`
+  margin-top: auto;
   box-sizing: border-box;
   padding-left: 10%;
   width: 70%;

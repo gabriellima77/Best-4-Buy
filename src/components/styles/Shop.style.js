@@ -4,7 +4,7 @@ export const StyledShop = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
   background: #EFEFEF;
 `;
 

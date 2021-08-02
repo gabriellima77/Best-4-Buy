@@ -1,52 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import uniqid from 'uniqid';
 import { StyledShop, Categories } from './styles/Shop.style';
 import { ItemsBox, Item, Rating } from './styles/Items.style';
 import { BsStar, BsStarHalf, BsStarFill} from 'react-icons/bs';
 import {
-  GiBigDiamondRing, GiToaster,
-  GiTShirt, GiSteeringWheel, GiAmpleDress,
-  GiBabyBottle, GiSlicedBread, GiSmartphone,
+  GiBigDiamondRing,
+  GiTShirt, GiAmpleDress,
+  GiSmartphone,
 } from 'react-icons/gi';
+  
+const Shop = ({match})=> {
+  const [data, setData] = useState([]);
 
-const Shop = ()=> {
+  useEffect(()=> {
+    fetchData();
+  }, []);
+
+  const fetchData = async (category)=> {
+    const response = (category)
+      ? await fetch(`https://fakestoreapi.com/products/category/${category}`)
+      : await fetch('https://fakestoreapi.com/products')
+    const json = await response.json();
+    console.log(json);
+    setData(json);
+  }
+
+  const getRandomRate = ()=> (Math.floor(Math.random() * 500) / 100);
+  const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
+
   return(
     <StyledShop>
-      <Categories>
-        <GiBigDiamondRing title="accessories" />
-        <GiToaster title="appliances" />
-        <GiSteeringWheel title="automotive" />
-        <GiBabyBottle title="babies" />
-        <GiTShirt title="fashionmen" />
-        <GiAmpleDress title="fashionwomen" />
-        <GiSmartphone title="gadgets" />
-        <GiSlicedBread title="groceries" />
-      </Categories>
+      {getCategories()}
       <ItemsBox>
-        <Item>
-          <img />
-          <p>Nome</p>
-          <RatingBox n={4.7} />
-          <p>$ 125.99</p>
-        </Item>
-        <Item>
-          <img />
-          <p>Nome</p>
-          <RatingBox n={4.2} />
-          <p>$ 125.99</p>
-        </Item>
-        <Item>
-          <img />
-          <p>Nome</p>
-          <RatingBox n={2.2} />
-          <p>$ 125.99</p>
-        </Item>
-        <Item>
-          <img />
-          <p>Nome</p>
-          <RatingBox n={3.5} />
-          <p>$ 125.99</p>
-        </Item>
+        {
+          data
+            ? data.map((prod)=> (
+              <Item key={prod.id}>
+                <img alt={prod.title} src={prod.image} />
+                <p>{prod.title}</p>
+                <RatingBox
+                  rating={getPeopleRated()}
+                  n={getRandomRate(10000)}
+                />
+                <p>$ {prod.price}</p>
+              </Item>
+            ))
+            : null
+        }
       </ItemsBox>
     </StyledShop>
   )
@@ -71,5 +71,14 @@ const RatingBox = ({rating, n})=> {
     </Rating>
   );
 }
+
+const getCategories = ()=> (
+  <Categories>
+    <GiBigDiamondRing title="jewelery" />
+    <GiTShirt title="men's clothing" />
+    <GiAmpleDress title="women's clothing" />
+    <GiSmartphone title="electronics" />
+  </Categories>
+);
 
 export default Shop;
