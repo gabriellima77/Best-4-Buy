@@ -4,8 +4,9 @@ import uniqid from 'uniqid';
 
 import useLoading from './hooks/useLoading';
 import { StyledShop, Categories } from './styles/Shop.style';
-import { ItemsBox, Item, Rating } from './styles/Items.style';
+import { ItemsBox, Item, Rating, QuantityBox } from './styles/Items.style';
 import { StyledLink } from './styles/Header.style';
+import Input from './Input';
 
 import { BsStar, BsStarHalf, BsStarFill} from 'react-icons/bs';
 import {
@@ -13,6 +14,7 @@ import {
   GiTShirt, GiAmpleDress,
   GiSmartphone,
 } from 'react-icons/gi';
+import { AddCartBtn } from './styles/Button.style';
   
 const Shop = ()=> {
   const [data, setData] = useState([]);
@@ -33,9 +35,6 @@ const Shop = ()=> {
     setIsLoading(false);
   }
 
-  const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
-  const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
-
   return(
     <StyledShop>
       {getCategories()}
@@ -44,17 +43,7 @@ const Shop = ()=> {
         : <ItemsBox>
           {
             data
-              ? data.map((prod)=> (
-                <Item key={prod.id}>
-                  <img alt={prod.title} src={prod.image} />
-                  <p>{prod.title}</p>
-                  <RatingBox
-                    rating={getPeopleRated(10000)}
-                    n={getRandomRate()}
-                  />
-                  <p>${prod.price}</p>
-                </Item>
-              ))
+              ? data.map((prod)=> (getItemCard(prod)))
               : null
           }
         </ItemsBox>
@@ -102,6 +91,27 @@ const getCategories = ()=> {
         <GiSmartphone title="electronics" />
       </StyledLink>
     </Categories>
+  );
+}
+
+const getItemCard = (prod)=> {
+  const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
+  const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
+
+  return (
+    <Item key={prod.id}>
+      <img alt={prod.title} src={prod.image} />
+      <p>{prod.title}</p>
+      <RatingBox
+        rating={getPeopleRated(10000)}
+        n={getRandomRate()}
+      />
+      <QuantityBox>
+        <p>${prod.price}</p>
+        <Input />
+      </QuantityBox>
+      <AddCartBtn>Add To Cart</AddCartBtn>
+    </Item>
   );
 }
 
