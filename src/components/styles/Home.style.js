@@ -25,7 +25,6 @@ export const StyledContent = styled.div`
 
   a {
     padding: 0;
-    margin-left: 30%;
     width: fit-content;
   }
 
@@ -41,4 +40,12 @@ export const StyledVector = styled.img`
   bottom: 0;
   right: 0;
   z-index: 0;
+`;
+
+export const StyledImg = styled.img`
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  top: 10%;
+  right: 12%;
 `;

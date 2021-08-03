@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { useRouteMatch, useParams } from 'react-router-dom';
 import uniqid from 'uniqid';
 
+import useLoading from './hooks/useLoading';
 import { StyledShop, Categories } from './styles/Shop.style';
 import { ItemsBox, Item, Rating } from './styles/Items.style';
 import { StyledLink } from './styles/Header.style';
@@ -16,18 +17,20 @@ import {
 const Shop = ()=> {
   const [data, setData] = useState([]);
   const { id } = useParams();
+  const { isLoading, setIsLoading, getLoading } = useLoading();
 
   useEffect(()=> {
     fetchData();
   }, [ id ]);
 
-  const fetchData = async (category)=> {
-    console.log(id);
+  const fetchData = async ()=> {
+    setIsLoading(true);
     const response = (id)
       ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
     const json = await response.json();
     setData(json);
+    setIsLoading(false);
   }
 
   const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
@@ -36,23 +39,26 @@ const Shop = ()=> {
   return(
     <StyledShop>
       {getCategories()}
-      <ItemsBox>
-        {
-          data
-            ? data.map((prod)=> (
-              <Item key={prod.id}>
-                <img alt={prod.title} src={prod.image} />
-                <p>{prod.title}</p>
-                <RatingBox
-                  rating={getPeopleRated(10000)}
-                  n={getRandomRate()}
-                />
-                <p>${prod.price}</p>
-              </Item>
-            ))
-            : null
-        }
-      </ItemsBox>
+      {(isLoading)
+        ?getLoading()
+        : <ItemsBox>
+          {
+            data
+              ? data.map((prod)=> (
+                <Item key={prod.id}>
+                  <img alt={prod.title} src={prod.image} />
+                  <p>{prod.title}</p>
+                  <RatingBox
+                    rating={getPeopleRated(10000)}
+                    n={getRandomRate()}
+                  />
+                  <p>${prod.price}</p>
+                </Item>
+              ))
+              : null
+          }
+        </ItemsBox>
+      }
     </StyledShop>
   )
 }
