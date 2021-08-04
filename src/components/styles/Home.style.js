@@ -50,3 +50,10 @@ export const StyledImg = styled.img`
   top: 10%;
   right: 12%;
 `;
+
+export const CartImg = styled.img`
+  align-self: center;
+  margin-top: 2vh;
+  width: 30%;
+  height: 50%;
+`;

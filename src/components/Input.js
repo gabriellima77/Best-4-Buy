@@ -10,6 +10,7 @@ const Input = ({ prod, setCart })=> {
   const addToCart = ()=> {
     const items = [...new Array(+value)].map(()=> prod.id);
     setCart((prev)=> [...prev, ...items]);
+    setValue(1);
   }
 
 
@@ -23,9 +24,9 @@ const Input = ({ prod, setCart })=> {
         <p>${prod.price}</p>
       
         <div>
-          <button onClick={increase}>+</button>
-          <input onChange={changeValue} type="text" value={value} />
           <button onClick={decrease}>-</button>
+          <input onChange={changeValue} type="text" value={value} />
+          <button onClick={increase}>+</button>
         </div>
       </QuantityBox>
       <AddCartBtn onClick={addToCart}>

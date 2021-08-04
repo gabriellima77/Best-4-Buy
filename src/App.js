@@ -27,22 +27,15 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/shop"
-            render={()=> <Shop cart={cart} setCart={setCart}/>}
+            render={()=> <Shop setCart={setCart}/>}
           />
           <Route path="/shop/:id"
-            render={()=> <Shop cart={cart} setCart={setCart}/>}
-          />
-          <Route exact path="/shop/:id"
-            render={()=> <Shop cart={cart} setCart={setCart}/>}
-          />
-          <Route exact path="/shop/:id" component={Shop}
-            render={()=> <Shop cart={cart} setCart={setCart}/>}
-          />
-          <Route exact path="/shop/:id"
-            render={()=> <Shop cart={cart} setCart={setCart}/>}
+            render={()=> <Shop setCart={setCart}/>}
           />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/cart"
+            render={()=> <Cart cart={cart} setCart={setCart} />}
+          />
         </Switch>
       </Router>
     </StyledApp>

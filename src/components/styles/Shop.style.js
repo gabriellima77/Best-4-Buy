@@ -6,6 +6,17 @@ export const StyledShop = styled.section`
   width: 100%;
   min-height: calc(100vh - 50px);
   background: #EFEFEF;
+
+  h2 {
+    margin-top: 2vh;
+    align-self: center;
+    font-family: 'Suez One', serif;
+  }
+
+  a{
+    margin-top: 2vh;
+    align-self: center;
+  }
 `;
 
 export const Categories = styled.div`

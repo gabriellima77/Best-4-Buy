@@ -1,21 +1,18 @@
 import React, { useState, useEffect} from 'react';
 import { useRouteMatch, useParams } from 'react-router-dom';
-import uniqid from 'uniqid';
 
 import useLoading from './hooks/useLoading';
 import { StyledShop, Categories } from './styles/Shop.style';
-import { ItemsBox, Item, Rating} from './styles/Items.style';
 import { StyledLink } from './styles/Header.style';
-import Input from './Input';
+import ItemCard from './ItemCard';
 
-import { BsStar, BsStarHalf, BsStarFill} from 'react-icons/bs';
 import {
   GiBigDiamondRing,
   GiTShirt, GiAmpleDress,
   GiSmartphone,
 } from 'react-icons/gi';
   
-const Shop = (props)=> {
+const Shop = ({ setCart })=> {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
@@ -47,36 +44,10 @@ const Shop = (props)=> {
       {getCategories()}
       {(isLoading)
         ?getLoading()
-        : <ItemsBox>
-          {
-            data
-              ? data.map((prod)=> (getItemCard(prod, props.setCart)))
-              : null
-          }
-        </ItemsBox>
+        : <ItemCard data={data} setCart={setCart}/>
       }
     </StyledShop>
   )
-}
-
-const RatingBox = ({rating, n})=> {
-  const getStars = ()=> {
-    const nFill = Math.floor(n);
-    const nHalf = (n - nFill) >= 0.5? 1: 0;
-    const empty = 5 - (nFill + nHalf);
-    const FillStars = [...new Array(nFill)].map(( )=> <BsStarFill key={uniqid()} />);
-    const halfStars = [...new Array(nHalf)].map(( )=> <BsStarHalf key={uniqid()} />);
-    const Stars = [...new Array(empty)].map(( )=> <BsStar key={uniqid()} />);
-
-    return [...FillStars, ...halfStars, ...Stars];
-  }
-
-  return(
-    <Rating>
-      {getStars()}
-      <p>{rating}</p>
-    </Rating>
-  );
 }
 
 const getCategories = ()=> {
@@ -98,20 +69,6 @@ const getCategories = ()=> {
         <GiSmartphone title="electronics" />
       </StyledLink>
     </Categories>
-  );
-}
-
-const getItemCard = (prod, setCart)=> {
-  return (
-    <Item key={prod.id}>
-      <img alt={prod.title} src={prod.image} />
-      <p>{prod.title}</p>
-      <RatingBox
-        rating={prod.peopleRated}
-        n={prod.rate}
-      />
-      <Input prod={prod} setCart={setCart}/>
-    </Item>
   );
 }
 
