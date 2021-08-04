@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import img from '../../assets/Logo.svg';
 import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
@@ -11,11 +10,9 @@ export const StyledHeader = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.img`
   width: 21px;
   height: 42px;
-  background: url(${img});
-  background-size: cover;
 `;
 
 export const Nav = styled.nav`
@@ -28,6 +25,7 @@ export const Nav = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
+  position: relative;
   color: ${(props)=>(props.color)? props.color: '#EAEAEA'};
   font-size: 20px;
   text-decoration: none;
@@ -35,5 +33,20 @@ export const StyledLink = styled(Link)`
 
   svg {
     padding-top: 20%;
+  }
+
+  div {
+    top: -25%;
+    right: -50%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #EAEAEA;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 10px;
   }
 `;

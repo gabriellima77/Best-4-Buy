@@ -16,20 +16,31 @@ import {
 } from 'react-router-dom';
 
 function App() {
-
+  const [cart, setCart] = useState([]);
+  console.log(0)
   return (
     <StyledApp> 
       <GlobalFonts />
       <Global />
       <Router >
-        <Header />
+        <Header cart={cart} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Shop} />
-          <Route path="/shop/:id" component={Shop} />
-          <Route exact path="/shop/:id" component={Shop} />
-          <Route exact path="/shop/:id" component={Shop} />
-          <Route exact path="/shop/:id" component={Shop} />
+          <Route exact path="/shop"
+            render={()=> <Shop cart={cart} setCart={setCart}/>}
+          />
+          <Route path="/shop/:id"
+            render={()=> <Shop cart={cart} setCart={setCart}/>}
+          />
+          <Route exact path="/shop/:id"
+            render={()=> <Shop cart={cart} setCart={setCart}/>}
+          />
+          <Route exact path="/shop/:id" component={Shop}
+            render={()=> <Shop cart={cart} setCart={setCart}/>}
+          />
+          <Route exact path="/shop/:id"
+            render={()=> <Shop cart={cart} setCart={setCart}/>}
+          />
           <Route exact path="/search" component={Search} />
           <Route exact path="/cart" component={Cart} />
         </Switch>

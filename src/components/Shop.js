@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 
 import useLoading from './hooks/useLoading';
 import { StyledShop, Categories } from './styles/Shop.style';
-import { ItemsBox, Item, Rating, QuantityBox } from './styles/Items.style';
+import { ItemsBox, Item, Rating} from './styles/Items.style';
 import { StyledLink } from './styles/Header.style';
 import Input from './Input';
 
@@ -14,12 +14,14 @@ import {
   GiTShirt, GiAmpleDress,
   GiSmartphone,
 } from 'react-icons/gi';
-import { AddCartBtn } from './styles/Button.style';
   
-const Shop = ()=> {
+const Shop = (props)=> {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
+  
+  const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
+  const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
 
   useEffect(()=> {
     fetchData();
@@ -31,6 +33,11 @@ const Shop = ()=> {
       ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
     const json = await response.json();
+    console.log(json);
+    json.forEach(item=> {
+      item.rate = getRandomRate();
+      item.peopleRated = getPeopleRated(10000);
+    });
     setData(json);
     setIsLoading(false);
   }
@@ -43,7 +50,7 @@ const Shop = ()=> {
         : <ItemsBox>
           {
             data
-              ? data.map((prod)=> (getItemCard(prod)))
+              ? data.map((prod)=> (getItemCard(prod, props.setCart)))
               : null
           }
         </ItemsBox>
@@ -94,23 +101,16 @@ const getCategories = ()=> {
   );
 }
 
-const getItemCard = (prod)=> {
-  const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
-  const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
-
+const getItemCard = (prod, setCart)=> {
   return (
     <Item key={prod.id}>
       <img alt={prod.title} src={prod.image} />
       <p>{prod.title}</p>
       <RatingBox
-        rating={getPeopleRated(10000)}
-        n={getRandomRate()}
+        rating={prod.peopleRated}
+        n={prod.rate}
       />
-      <QuantityBox>
-        <p>${prod.price}</p>
-        <Input />
-      </QuantityBox>
-      <AddCartBtn>Add To Cart</AddCartBtn>
+      <Input prod={prod} setCart={setCart}/>
     </Item>
   );
 }
