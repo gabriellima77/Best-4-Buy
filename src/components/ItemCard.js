@@ -4,7 +4,7 @@ import { ItemsBox, Item, Rating} from './styles/Items.style';
 import { BsStar, BsStarHalf, BsStarFill} from 'react-icons/bs';
 import Input from './Input';
 
-const ItemCard = ({data, setCart})=> {
+const ItemCard = ({ data, setCart, cart })=> {
 
   const RatingBox = ({rating, n})=> {
     const getStars = ()=> {
@@ -35,7 +35,7 @@ const ItemCard = ({data, setCart})=> {
           rating={prod.peopleRated}
           n={prod.rate}
         />
-        <Input prod={prod} setCart={setCart}/>
+        <Input prod={prod} setCart={setCart} cart={cart}/>
       </Item>
     );
   }

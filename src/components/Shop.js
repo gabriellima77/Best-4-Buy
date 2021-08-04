@@ -12,7 +12,7 @@ import {
   GiSmartphone,
 } from 'react-icons/gi';
   
-const Shop = ({ setCart })=> {
+const Shop = ({ setCart, cart })=> {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
@@ -30,7 +30,6 @@ const Shop = ({ setCart })=> {
       ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
     const json = await response.json();
-    console.log(json);
     json.forEach(item=> {
       item.rate = getRandomRate();
       item.peopleRated = getPeopleRated(10000);
@@ -44,7 +43,7 @@ const Shop = ({ setCart })=> {
       {getCategories()}
       {(isLoading)
         ?getLoading()
-        : <ItemCard data={data} setCart={setCart}/>
+        : <ItemCard data={data} setCart={setCart} cart={cart}/>
       }
     </StyledShop>
   )

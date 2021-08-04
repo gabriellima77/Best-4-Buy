@@ -27,10 +27,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/shop"
-            render={()=> <Shop setCart={setCart}/>}
+            render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
           <Route path="/shop/:id"
-            render={()=> <Shop setCart={setCart}/>}
+            render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
           <Route exact path="/search" component={Search} />
           <Route exact path="/cart"
