@@ -39,10 +39,9 @@ export const CartContainer = styled.div`
 `;
 
 export const CartItem = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
-  background: coral;
+  background: white;
 `;
 
 export const ImgContainer = styled.div`
@@ -61,27 +60,50 @@ export const ImgContainer = styled.div`
 `;
 
 export const CartContentBox = styled.div`
+  width: 30vw;
   height: 100%;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   h3 {
-    margin: 0;
     height: 20px;
     font-size: 16px;
     overflow: hidden;
   }
-
-  p {
-    margin: 0 10px;
-
-  }
   
   span {
-    width: calc(100% - 20px)
+    width: 100%;
     position: relative;
     top: 5px;
     display: flex;
   }
-`; 
+
+  div {
+    justify-content: space-around;
+  }
+`;
+
+export const Total = styled.div`
+  align-self: center;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30vw;
+  height: 50px;
+  border-top: 1px dashed black;
+  display: flex;
+  align-items: flex-end;
+
+  p {
+    margin-right: 10%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-left: 10%;
+    margin-right: auto;
+    font-size: 20px;
+  }
+`;

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SVG from '../assets/empty-cart.svg';
 
-import { StyledShop, CartContainer, CartItem, CartContentBox, ImgContainer } from './styles/Shop.style';
+import { StyledShop, CartContainer, Total } from './styles/Shop.style';
 import { CartImg } from './styles/Home.style';
 import { StyledButton } from './styles/Button.style';
 import { StyledLink } from './styles/Header.style';
 
-const Cart = ({ cart, setCart})=> {
+import CartCard from './CartCard';
+
+const Cart = ({ cart, setCart })=> {
   const getEmptyContent = ()=> (
     <StyledShop>
       <CartImg alt="A man with a empty cart" src={SVG} />
@@ -21,33 +23,30 @@ const Cart = ({ cart, setCart})=> {
     return (
       <StyledShop>
         <CartContainer>
-          {cart.map(item=> cartCard(item))}
+          {cart.map(item=> <CartCard
+            key={item.id}
+            item={item}
+            setCart={setCart}
+            cart={cart}
+            />)}
         </CartContainer>
+        <Total>
+          <h3>Total:</h3>
+          <p>
+            {
+              Math.floor(
+                cart.reduce(
+                  (value, item)=> (item.price * item.quantity) + value, 0
+                ) * 100
+              ) / 100
+            }
+          </p>
+        </Total>
       </StyledShop>
     );
   }
 
   return (cart.length < 1)? getEmptyContent(): getCartContent();
-}
-
-const cartCard = (item)=> {
-  const [value, setValue] = useState('');
-
-  return (
-    <CartItem>
-      <ImgContainer>
-        <img alt={item.title} src={item.img} />
-      </ImgContainer>
-      <CartContentBox>
-        <span>
-          <h3>{item.title}</h3>
-          <p>${item.price}</p>
-        </span>
-        
-      </CartContentBox>
-    </CartItem>
-  )
-
 }
 
 export default Cart;
