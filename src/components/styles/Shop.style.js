@@ -13,10 +13,6 @@ export const StyledShop = styled.section`
     font-family: 'Suez One', serif;
   }
 
-  a{
-    margin-top: 2vh;
-    align-self: center;
-  }
 `;
 
 export const Categories = styled.div`

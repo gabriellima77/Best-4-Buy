@@ -23,7 +23,7 @@ export const AddCartBtn = styled.button`
   font-family: 'Suez One', serif;
   color: #EAEAEA;
   transition: top .5s linear;
-  margin-bottom: ${(props)=> (props.marginB)? '2%': 0};
+  margin-bottom: ${(props)=> (props.marginB)? '2%': ''};
   &:active {
     top: 5px;
     box-shadow: none;

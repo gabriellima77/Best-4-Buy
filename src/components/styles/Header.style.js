@@ -8,6 +8,16 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.8);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    
+    a {
+      margin-left: 0px;
+    }
+  }
 `;
 
 export const Logo = styled.img`
@@ -22,6 +32,10 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-around;
   margin-right: 7%;
+
+  @media (max-width: 768px) {
+    margin-right: 0px;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -30,6 +44,8 @@ export const StyledLink = styled(Link)`
   font-size: 20px;
   text-decoration: none;
   margin-left: ${(props)=> props.margin};
+  margin-top: ${(props)=> (props.mTop)? '2vh': 0};
+  align-self: center;
 
   svg {
     padding-top: 20%;
