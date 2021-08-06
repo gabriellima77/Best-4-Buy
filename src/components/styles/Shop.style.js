@@ -32,7 +32,7 @@ export const Categories = styled.div`
 
 export const CartContainer = styled.div`
   width: fit-content;
-  margin: 5% auto;
+  margin: 5% auto 2% auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px 5%;
@@ -91,7 +91,7 @@ export const Total = styled.div`
   align-items: center;
   width: 30vw;
   height: 50px;
-  border-top: 1px dashed black;
+  border-top: 1px solid black;
   display: flex;
   align-items: flex-end;
 

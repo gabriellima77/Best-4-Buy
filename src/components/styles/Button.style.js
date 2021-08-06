@@ -16,14 +16,14 @@ export const AddCartBtn = styled.button`
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.9);
   margin: 5px auto;
   padding: 10px 0px;
-  width: 80%;
+  width: ${(props)=> (props.width)? props.width: '80%'};
   background-color: rgba(0, 0, 0, 0.8);
   border: none;
   font-size: 20px;
   font-family: 'Suez One', serif;
   color: #EAEAEA;
   transition: top .5s linear;
-
+  margin-bottom: ${(props)=> (props.marginB)? '2%': 0};
   &:active {
     top: 5px;
     box-shadow: none;

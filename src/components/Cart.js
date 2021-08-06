@@ -3,7 +3,7 @@ import SVG from '../assets/empty-cart.svg';
 
 import { StyledShop, CartContainer, Total } from './styles/Shop.style';
 import { CartImg } from './styles/Home.style';
-import { StyledButton } from './styles/Button.style';
+import { AddCartBtn, StyledButton } from './styles/Button.style';
 import { StyledLink } from './styles/Header.style';
 
 import CartCard from './CartCard';
@@ -42,6 +42,7 @@ const Cart = ({ cart, setCart })=> {
             }
           </p>
         </Total>
+        <AddCartBtn width="30%" marginB>Checkout</AddCartBtn>
       </StyledShop>
     );
   }

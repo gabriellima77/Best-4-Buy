@@ -29,10 +29,13 @@ function App() {
           <Route exact path="/shop"
             render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
-          <Route path="/shop/:id"
+          <Route exact path="/shop/:id"
             render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/search/:id"
+            render={()=> <Shop setCart={setCart} cart={cart} isSearch />}
+          />
           <Route exact path="/cart"
             render={()=> <Cart cart={cart} setCart={setCart} />}
           />

@@ -12,7 +12,7 @@ import {
   GiSmartphone,
 } from 'react-icons/gi';
   
-const Shop = ({ setCart, cart })=> {
+const Shop = ({ setCart, cart, isSearch })=> {
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
@@ -26,14 +26,20 @@ const Shop = ({ setCart, cart })=> {
 
   const fetchData = async ()=> {
     setIsLoading(true);
-    const response = (id)
+    const response = (id && !isSearch)
       ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
-    const json = await response.json();
+    let json = await response.json();
     json.forEach(item=> {
       item.rate = getRandomRate();
       item.peopleRated = getPeopleRated(10000);
     });
+
+    // Search Filter
+    if(isSearch) json = json.filter((item)=> 
+      (item.title.toUpperCase().includes(id.toUpperCase()))
+    );
+
     setData(json);
     setIsLoading(false);
   }
