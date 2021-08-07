@@ -28,8 +28,8 @@ const Shop = ({ setCart, cart, isSearch })=> {
     setIsLoading(true);
     try {
       const response = (id && !isSearch)
-      ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
-      : await fetch('https://fakestoreapi.com/products')
+      ? await fetch(`https://fakestoreapi.com/products/category/${id}`, {mode: 'cors'})
+      : await fetch('https://fakestoreapi.com/products', {mode: 'cors'})
       let json = await response.json();
       json.forEach(item=> {
         item.rate = getRandomRate();
@@ -44,6 +44,7 @@ const Shop = ({ setCart, cart, isSearch })=> {
       setData(json);
       setIsLoading(false);
     } catch(error) {
+      console.log(id);
       setIsLoading(false);
       console.error(error);
     }

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Best 4 Buy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project I build a store page, with a cart, shop and search page.</br>
+This project was part of my React studies, and this time I'm learning React Router and Styled Components. This application is a store like page with navigation routes, this is the power of React Router.</br>
 
-## Available Scripts
+## Demo
+### Home Page
+![Home page demo](./demo/home.png)[Home page mobile demo](./demo/home_mobile.png) </br>
 
-In the project directory, you can run:
+### Shop Page
+![Shop page demo](./demo/shop.png)[Shop page mobile demo](./demo/shop_mobile.png) </br>
 
-### `yarn start`
+### Search Page
+![Search Page demo](./demo/search.gif)[Search page mobile demo](./demo/search_mobile.png) </br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Cart Page
+![Empty Cart demo](./demo/empty_cart.png)
+[Empty Cart page mobile demo](./demo/empty_cart_mobile.png) </br>
+![Cart with products](./demo/cart.png)
+[Cart with products mobile demo](./demo/cart_mobile.png) </br>
+If you want to give it a try click the link below: </br>
+[Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting started
+If you want to use this app locally, follow the steps below: </br>
+```
+git clone git@github.com:gabriellima77/Best-4-Buy.git
+cd Best-4-Buy
+npm install
+npm start
+```
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Build with
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Styled Components](https://styled-components.com/)
+- [Fake Store Api](https://fakestoreapi.com/)

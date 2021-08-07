@@ -34,7 +34,7 @@ export const StyledContent = styled.div`
   }
 
   @media (max-width: 670px) {
-    width: 100%;
+    width: 90%;
     font-size: 18px;
     h1,
     p {
