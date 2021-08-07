@@ -34,6 +34,10 @@ export const InputContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 50%;
+
+  @media (max-width: 550px) {
+    width: 90%;
+  }
 `;
 
 const inputAnimation = keyframes`

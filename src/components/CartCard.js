@@ -21,9 +21,7 @@ const CartCard = ({ item, setCart, cart })=> {
 
   const decrease = ()=> {
     if(value - 1 <= 0){
-      console.log(cart);
       const aux = [...cart].filter((prod)=> (prod.id !== item.id));
-      console.log(aux);
       setCart([...aux]);
     } else {
       setValue((prev)=> (prev >= 1)? +prev - 1: prev);

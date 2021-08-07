@@ -32,6 +32,18 @@ export const StyledContent = styled.div`
   button {
     cursor: pointer;
   }
+
+  @media (max-width: 670px) {
+    width: 100%;
+    font-size: 18px;
+    h1,
+    p {
+      text-shadow: 1px 1px 1px #EAEAEA;
+    }
+    a {
+      align-self: flex-start;
+    }
+  }
 `;
 
 export const StyledVector = styled.img`
@@ -49,6 +61,12 @@ export const StyledImg = styled.img`
   position: absolute;
   top: 10%;
   right: 12%;
+
+  @media (max-width: 670px) {
+    width: 60%;
+    top: 0;
+    right: 18%;
+  }
 `;
 
 export const CartImg = styled.img`
@@ -56,4 +74,13 @@ export const CartImg = styled.img`
   margin-top: 2vh;
   width: 30%;
   height: 50%;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    margin-top: 10vh;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: 20vh;
+  }
 `;

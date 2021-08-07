@@ -3,7 +3,6 @@ import { StyledLink } from './styles/Header.style';
 import { StyledButton } from './styles/Button.style';
 
 const Button = (props)=> {
-  console.log(props);
   return(
     <StyledLink to="/shop">
       <StyledButton>

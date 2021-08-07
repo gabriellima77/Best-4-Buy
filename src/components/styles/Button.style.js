@@ -8,6 +8,11 @@ export const StyledButton = styled.button`
   font-family: 'Suez One', serif;
   color: #EAEAEA;
   width: ${(props)=> (props.small)? 'fit-content': '100%'};
+
+  @media (max-width: 550px) {
+    font-size: ${(props)=> (props.small)? '18px': '24px'};
+    padding: 5px 20px;
+  }
 `;
 
 export const AddCartBtn = styled.button`

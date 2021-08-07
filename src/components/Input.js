@@ -22,7 +22,6 @@ const Input = ({ prod, setCart, cart })=> {
         title: prod.title,
         img: prod.image
       });
-      console.log(aux);
 
       setCart([...aux]);
     }

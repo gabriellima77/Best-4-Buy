@@ -32,6 +32,10 @@ export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px 5%;
+
+  @media (max-width: 550px) {
+    width: 90%;
+  }
 `;
 
 export const CartItem = styled.div`
@@ -79,6 +83,10 @@ export const CartContentBox = styled.div`
   div {
     justify-content: space-around;
   }
+
+  @media (max-width: 550px) {
+    width: 80%;
+  }
 `;
 
 export const Total = styled.div`
@@ -101,5 +109,9 @@ export const Total = styled.div`
     margin-left: 10%;
     margin-right: auto;
     font-size: 20px;
+  }
+
+  @media (max-width: 550px){
+    width: 90%;
   }
 `;

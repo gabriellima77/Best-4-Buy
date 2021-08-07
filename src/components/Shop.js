@@ -26,22 +26,28 @@ const Shop = ({ setCart, cart, isSearch })=> {
 
   const fetchData = async ()=> {
     setIsLoading(true);
-    const response = (id && !isSearch)
+    try {
+      const response = (id && !isSearch)
       ? await fetch(`https://fakestoreapi.com/products/category/${id}`)
       : await fetch('https://fakestoreapi.com/products')
-    let json = await response.json();
-    json.forEach(item=> {
-      item.rate = getRandomRate();
-      item.peopleRated = getPeopleRated(10000);
-    });
+      let json = await response.json();
+      json.forEach(item=> {
+        item.rate = getRandomRate();
+        item.peopleRated = getPeopleRated(10000);
+      });
+  
+      // Search Filter
+      if(isSearch) json = json.filter((item)=> 
+        (item.title.toUpperCase().includes(id.toUpperCase()))
+      );
+  
+      setData(json);
+      setIsLoading(false);
+    } catch(error) {
+      setIsLoading(false);
+      console.error(error);
+    }
 
-    // Search Filter
-    if(isSearch) json = json.filter((item)=> 
-      (item.title.toUpperCase().includes(id.toUpperCase()))
-    );
-
-    setData(json);
-    setIsLoading(false);
   }
 
   return(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { StyledApp } from './components/styles/App.style';
 import { Global } from './components/styles/Globas.style';
@@ -17,7 +17,7 @@ import {
 
 function App() {
   const [cart, setCart] = useState([]);
-  console.log(0)
+  
   return (
     <StyledApp> 
       <GlobalFonts />

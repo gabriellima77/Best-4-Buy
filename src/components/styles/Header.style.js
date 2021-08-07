@@ -35,6 +35,7 @@ export const Nav = styled.nav`
 
   @media (max-width: 768px) {
     margin-right: 0px;
+    width: 50%;
   }
 `;
 
