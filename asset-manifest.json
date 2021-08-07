@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Best-4-Buy/static/js/main.a34c5e48.chunk.js",
-    "main.js.map": "/Best-4-Buy/static/js/main.a34c5e48.chunk.js.map",
+    "main.js": "/Best-4-Buy/static/js/main.16046261.chunk.js",
+    "main.js.map": "/Best-4-Buy/static/js/main.16046261.chunk.js.map",
     "runtime-main.js": "/Best-4-Buy/static/js/runtime-main.d5d9d6a2.js",
     "runtime-main.js.map": "/Best-4-Buy/static/js/runtime-main.d5d9d6a2.js.map",
     "static/js/2.b871aece.chunk.js": "/Best-4-Buy/static/js/2.b871aece.chunk.js",
@@ -20,6 +20,6 @@
   "entrypoints": [
     "static/js/runtime-main.d5d9d6a2.js",
     "static/js/2.b871aece.chunk.js",
-    "static/js/main.a34c5e48.chunk.js"
+    "static/js/main.16046261.chunk.js"
   ]
 }
