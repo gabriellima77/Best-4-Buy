@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/Best-4-Buy/static/js/main.a34c5e48.chunk.js",
+    "main.js.map": "/Best-4-Buy/static/js/main.a34c5e48.chunk.js.map",
+    "runtime-main.js": "/Best-4-Buy/static/js/runtime-main.d5d9d6a2.js",
+    "runtime-main.js.map": "/Best-4-Buy/static/js/runtime-main.d5d9d6a2.js.map",
+    "static/js/2.b871aece.chunk.js": "/Best-4-Buy/static/js/2.b871aece.chunk.js",
+    "static/js/2.b871aece.chunk.js.map": "/Best-4-Buy/static/js/2.b871aece.chunk.js.map",
+    "static/js/3.c5505d89.chunk.js": "/Best-4-Buy/static/js/3.c5505d89.chunk.js",
+    "static/js/3.c5505d89.chunk.js.map": "/Best-4-Buy/static/js/3.c5505d89.chunk.js.map",
+    "index.html": "/Best-4-Buy/index.html",
+    "static/js/2.b871aece.chunk.js.LICENSE.txt": "/Best-4-Buy/static/js/2.b871aece.chunk.js.LICENSE.txt",
+    "static/media/Logo.718f0b60.svg": "/Best-4-Buy/static/media/Logo.718f0b60.svg",
+    "static/media/Roboto-Medium.7429a63c.ttf": "/Best-4-Buy/static/media/Roboto-Medium.7429a63c.ttf",
+    "static/media/SuezOne-Regular.7a8a3977.ttf": "/Best-4-Buy/static/media/SuezOne-Regular.7a8a3977.ttf",
+    "static/media/Vector-1.baeccb18.svg": "/Best-4-Buy/static/media/Vector-1.baeccb18.svg",
+    "static/media/empty-cart.498b68fd.svg": "/Best-4-Buy/static/media/empty-cart.498b68fd.svg",
+    "static/media/shopping.ee0ae5b3.svg": "/Best-4-Buy/static/media/shopping.ee0ae5b3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5d9d6a2.js",
+    "static/js/2.b871aece.chunk.js",
+    "static/js/main.a34c5e48.chunk.js"
+  ]
+}
