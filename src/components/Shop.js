@@ -13,6 +13,7 @@ import {
 } from 'react-icons/gi';
   
 const Shop = ({ setCart, cart, isSearch })=> {
+  const { url } = useRouteMatch();
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
@@ -53,7 +54,7 @@ const Shop = ({ setCart, cart, isSearch })=> {
 
   return(
     <StyledShop>
-      {getCategories()}
+      {getCategories(url)}
       {(isLoading)
         ?getLoading()
         : <ItemCard data={data} setCart={setCart} cart={cart}/>
@@ -62,22 +63,22 @@ const Shop = ({ setCart, cart, isSearch })=> {
   )
 }
 
-const getCategories = ()=> {
-  let { url } = useRouteMatch();
-  url = (url !== '/shop')? '/shop': url;
+const getCategories = (url)=> {
+  let aux = url;
+  aux = (aux !== '/shop')? '/shop': aux;
 
   return (
     <Categories>
-      <StyledLink color="black" to={`${url}/jewelery`}>
+      <StyledLink color="black" to={`${aux}/jewelery`}>
         <GiBigDiamondRing title="jewelery" />
       </StyledLink>
-      <StyledLink color="black" to={`${url}/men's clothing`}>
+      <StyledLink color="black" to={`${aux}/men's clothing`}>
         <GiTShirt title="men's clothing" />
       </StyledLink>
-      <StyledLink color="black" to={`${url}/women's clothing`}>
+      <StyledLink color="black" to={`${aux}/women's clothing`}>
         <GiAmpleDress title="women's clothing" />
       </StyledLink>
-      <StyledLink color="black" to={`${url}/electronics`}>
+      <StyledLink color="black" to={`${aux}/electronics`}>
         <GiSmartphone title="electronics" />
       </StyledLink>
     </Categories>
