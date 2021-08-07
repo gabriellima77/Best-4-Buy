@@ -5,21 +5,21 @@ This project was part of my React studies, and this time I'm learning React Rout
 
 ## Demo
 ### Home Page
-![Home page demo](./demo/home.png)[Home page mobile demo](./demo/home_mobile.png) </br>
+![Home page demo](./demo/home.png)![Home page mobile demo](./demo/home_mobile.png) </br>
 
 ### Shop Page
-![Shop page demo](./demo/shop.png)[Shop page mobile demo](./demo/shop_mobile.png) </br>
+![Shop page demo](./demo/shop.png)![Shop page mobile demo](./demo/shop_mobile.png) </br>
 
 ### Search Page
-![Search Page demo](./demo/search.gif)[Search page mobile demo](./demo/search_mobile.png) </br>
+![Search Page demo](./demo/search.gif)![Search page mobile demo](./demo/search_mobile.png) </br>
 
 ### Cart Page
 ![Empty Cart demo](./demo/empty_cart.png)
-[Empty Cart page mobile demo](./demo/empty_cart_mobile.png) </br>
+![Empty Cart page mobile demo](./demo/empty_cart_mobile.png) </br>
 ![Cart with products](./demo/cart.png)
-[Cart with products mobile demo](./demo/cart_mobile.png) </br>
+![Cart with products mobile demo](./demo/cart_mobile.png) </br>
 If you want to give it a try click the link below: </br>
-[Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
+![Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
 
 ## Getting started
 If you want to use this app locally, follow the steps below: </br>
