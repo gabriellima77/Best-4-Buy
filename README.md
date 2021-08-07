@@ -5,19 +5,26 @@ This project was part of my React studies, and this time I'm learning React Rout
 
 ## Demo
 ### Home Page
-![Home page demo](./demo/home.png)![Home page mobile demo](./demo/home_mobile.png) </br>
+desktop |mobile 
+----------------------------------|------------------------------------------------
+![Home page demo](./demo/home.png)|![Home page mobile demo](./demo/home_mobile.png) </br>
 
 ### Shop Page
-![Shop page demo](./demo/shop.png)![Shop page mobile demo](./demo/shop_mobile.png) </br>
+desktop |mobile 
+----------------------------------|------------------------------------------------
+![Shop page demo](./demo/shop.png)|![Shop page mobile demo](./demo/shop_mobile.png) </br>
 
 ### Search Page
-![Search Page demo](./demo/search.gif)![Search page mobile demo](./demo/search_mobile.png) </br>
+desktop |mobile 
+--------------------------------------|---------------------------------------------------
+![Search Page demo](./demo/search.gif)|![Search page mobile demo](./demo/search_mobile.png) </br>
 
 ### Cart Page
-![Empty Cart demo](./demo/empty_cart.png)
-![Empty Cart page mobile demo](./demo/empty_cart_mobile.png) </br>
-![Cart with products](./demo/cart.png)
-![Cart with products mobile demo](./demo/cart_mobile.png) </br>
+desktop |mobile 
+-----------------------------------------|------------------------------------------------------------
+![Empty Cart demo](./demo/empty_cart.png)|![Empty Cart page mobile demo](./demo/empty_cart_mobile.png) </br>
+![Cart with products](./demo/cart.png)|![Cart with products mobile demo](./demo/cart_mobile.png) </br>
+
 If you want to give it a try click the link below: </br>
 ![Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
 
