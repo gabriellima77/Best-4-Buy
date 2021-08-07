@@ -51,8 +51,6 @@ const Shop = ({ setCart, cart, isSearch })=> {
     fetchData();
   }, [ id ]);
 
-
-
   return(
     <StyledShop>
       {getCategories()}
@@ -73,10 +71,10 @@ const getCategories = ()=> {
       <StyledLink color="black" to="/Best-4-Buy/shop/men's clothing/">
         <GiTShirt title="men's clothing" />
       </StyledLink>
-      <StyledLink color="black" to="/Best-4-Buy/shop/women's clothing">
+      <StyledLink color="black" to="/Best-4-Buy/shop/women's clothing/">
         <GiAmpleDress title="women's clothing" />
       </StyledLink>
-      <StyledLink color="black" to="/Best-4-Buy/shop/electronics">
+      <StyledLink color="black" to="/Best-4-Buy/shop/electronics/">
         <GiSmartphone title="electronics" />
       </StyledLink>
     </Categories>
