@@ -26,7 +26,7 @@ desktop |mobile
 ![Cart with products](./demo/cart.png)|![Cart with products mobile demo](./demo/cart_mobile.png) </br>
 
 If you want to give it a try click the link below: </br>
-![Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
+[Live Demo](https://gabriellima77.github.io/Best-4-Buy/)
 
 ## Getting started
 If you want to use this app locally, follow the steps below: </br>
