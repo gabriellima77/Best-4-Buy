@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { useRouteMatch, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import useLoading from './hooks/useLoading';
 import { StyledShop, Categories } from './styles/Shop.style';
@@ -13,17 +13,12 @@ import {
 } from 'react-icons/gi';
   
 const Shop = ({ setCart, cart, isSearch })=> {
-  const { url } = useRouteMatch();
   const [data, setData] = useState([]);
   const { id } = useParams();
   const { isLoading, setIsLoading, getLoading } = useLoading();
   
   const getRandomRate = ()=> ((Math.floor(Math.random() * 400) + 100)  / 100);
   const getPeopleRated = (max)=> (Math.floor(Math.random() * max));
-
-  useEffect(()=> {
-    fetchData();
-  }, [ id ]);
 
   const fetchData = async ()=> {
     setIsLoading(true);
@@ -52,9 +47,15 @@ const Shop = ({ setCart, cart, isSearch })=> {
 
   }
 
+  useEffect(()=> {
+    fetchData();
+  }, [ id ]);
+
+
+
   return(
     <StyledShop>
-      {getCategories(url)}
+      {getCategories()}
       {(isLoading)
         ?getLoading()
         : <ItemCard data={data} setCart={setCart} cart={cart}/>
@@ -63,22 +64,19 @@ const Shop = ({ setCart, cart, isSearch })=> {
   )
 }
 
-const getCategories = (url)=> {
-  let aux = url;
-  aux = (aux !== '/shop')? '/shop': aux;
-
+const getCategories = ()=> {
   return (
     <Categories>
-      <StyledLink color="black" to={`${aux}/jewelery`}>
+      <StyledLink color="black" to="/Best-4-Buy/shop/jewelery/">
         <GiBigDiamondRing title="jewelery" />
       </StyledLink>
-      <StyledLink color="black" to={`${aux}/men's clothing`}>
+      <StyledLink color="black" to="/Best-4-Buy/shop/men's clothing/">
         <GiTShirt title="men's clothing" />
       </StyledLink>
-      <StyledLink color="black" to={`${aux}/women's clothing`}>
+      <StyledLink color="black" to="/Best-4-Buy/shop/women's clothing">
         <GiAmpleDress title="women's clothing" />
       </StyledLink>
-      <StyledLink color="black" to={`${aux}/electronics`}>
+      <StyledLink color="black" to="/Best-4-Buy/shop/electronics">
         <GiSmartphone title="electronics" />
       </StyledLink>
     </Categories>

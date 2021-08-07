@@ -7,16 +7,16 @@ import { FiShoppingCart } from 'react-icons/fi';
 const Header = ({ cart })=> {
   return (
     <StyledHeader>
-      <StyledLink margin="7%" to="/">
+      <StyledLink margin="7%" to="/Best-4-Buy/">
         <Logo alt="logo" src={img}/>
       </StyledLink>
       
       <Nav>
-        <StyledLink to="/shop">Shop</StyledLink>
-        <StyledLink to="/search">
+        <StyledLink to="/Best-4-Buy/shop/" >Shop</StyledLink>
+        <StyledLink to="/Best-4-Buy/search/">
           <AiOutlineSearch />
         </StyledLink>
-        <StyledLink to="/cart">
+        <StyledLink to="/Best-4-Buy/cart">
           <FiShoppingCart />
           {(cart.length > 0)? <div>{cart.length}</div> : null}
         </StyledLink>

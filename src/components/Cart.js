@@ -13,7 +13,7 @@ const Cart = ({ cart, setCart })=> {
     <StyledShop>
       <CartImg alt="A man with a empty cart" src={SVG} />
         <h2>Your cart is empty!</h2>
-      <StyledLink to="/shop">
+      <StyledLink to="/Best-4-Buy/shop/">
         <StyledButton small>Go Shopping</StyledButton>
       </StyledLink>
     </StyledShop>

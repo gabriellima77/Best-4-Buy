@@ -15,7 +15,7 @@ const Search= ()=> {
     return (
       <InputContainer>
         <Input onChange={changeValue} placeholder="Search" value={value}/>
-        <StyledLink to={`${url}${(!value)? '': '/' + value}`}>
+        <StyledLink to={`${url}${(!value)? '': value}`}>
           <StyledButton small>Search</StyledButton>
         </StyledLink>
       </InputContainer>

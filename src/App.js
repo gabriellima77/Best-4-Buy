@@ -25,18 +25,18 @@ function App() {
       <Router >
         <Header cart={cart} />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/shop"
+          <Route exact path="/Best-4-Buy/" component={Home} />
+          <Route exact path="/Best-4-Buy/shop"
             render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
-          <Route exact path="/shop/:id"
+          <Route exact path="/Best-4-Buy/shop/:id"
             render={()=> <Shop setCart={setCart} cart={cart}/>}
           />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/search/:id"
+          <Route exact path="/Best-4-Buy/search" component={Search} />
+          <Route exact path="/Best-4-Buy/search/:id"
             render={()=> <Shop setCart={setCart} cart={cart} isSearch />}
           />
-          <Route exact path="/cart"
+          <Route exact path="/Best-4-Buy/cart"
             render={()=> <Cart cart={cart} setCart={setCart} />}
           />
         </Switch>

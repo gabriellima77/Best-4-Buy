@@ -4,7 +4,7 @@ import { StyledButton } from './styles/Button.style';
 
 const Button = (props)=> {
   return(
-    <StyledLink to="/shop">
+    <StyledLink to="/Best-4-Buy/shop/">
       <StyledButton>
         {props.children}
       </StyledButton>
