@@ -37,7 +37,7 @@ npm install
 npm start
 ```
 
-## Build with
+## Built with
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
